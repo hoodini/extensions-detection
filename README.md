@@ -1,27 +1,35 @@
-# extensions-detection
-This repository contains a Python script that scans a user's local machine to find installed extensions on Google Chrome and Microsoft Edge browsers. It outputs the findings in both the console, in a structured tabular format, and a CSV file.
+# Browser Extension Data Extractor (for Windows, if using other OS the paths should be modified accordingly)
 
-# Browser Extension Scanner
-This Python script scans the local machine to find installed extensions on Google Chrome and Microsoft Edge browsers. It prints a list of all installed extensions and their corresponding browser(s) in the console as well as saving this data to a CSV file.
+This Python script collects data on all installed extensions in Chrome and Edge browsers for a given user on a machine. The script specifically extracts the following data:
 
-# Requirements
-To run this script, you need to have Python installed on your machine. The script has been tested with Python 3.8 and newer versions. You also need to have the tabulate Python package installed. You can install it using pip:
+- Extension ID
+- Extension Name
+- Version
+- Author
+- Default Title
+- Browser (Chrome or Edge)
 
-pip install tabulate
-Usage
-To run the script, navigate to the directory containing the script in a terminal and run:
+The script outputs this data in two formats:
 
-python extension_scanner.py
-Output
-The script prints a table to the console that lists all installed extensions with the corresponding browser(s). It also writes this data to a CSV file named extensions.csv in the same directory. The table and the CSV file have the following format:
+1. A CSV file named `extensions.csv` saved in the same directory as the script.
+2. A printed tabular output in the console.
 
-Extension|Browser
--------------------------------
-Extension Name 1	chrome, edge
-Extension Name 2	chrome
-Extension Name 3	edge
+## Requirements
 
-Errors while reading the manifest.json file of an extension and entries with localization placeholders in the extension name are filtered out from the output.
+- Python 3.6 or higher
+- [tabulate](https://pypi.org/project/tabulate/)
 
-Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+## Installation
+
+1. Clone this repository to your local machine.
+2. Install the necessary Python packages by running `pip install -r requirements.txt` in your terminal.
+
+## Usage
+
+1. Navigate to the repository directory in your terminal.
+2. Run the script by typing `python extensions.py`.
+3. Check the generated `extensions.csv` file in the same directory, or observe the tabular output in your console.
+
+## Disclaimer
+
+This script is created for demonstration and educational purposes. It doesn't collect or send any data elsewhere. Please use responsibly and ensure you have necessary permissions to run this on any machine.
